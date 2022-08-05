@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3">Sign In</h3>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for messages in messages %}
+                            <p class = {{messages.tags}}>{{messages}}</p>
+                        {% endfor %}
+                    {% endif %}
+                <form action="{% url 'signin' %}" onsubmit=" return validate();" method="post">
+                    {% csrf_token %}
+                    <div class="mb-1">
+                        <label for="username">SIC</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                        <label for="sic_error" id="sic_error" class="text-danger"></label>
+                    </div>
+                    <div class="mb-1">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id="password" class="form-control">
+                        <label for="password error" id="password_error" class="text-danger"></label>
+                    </div>
+                    <input type="submit" value=" Sign In" class="btn btn-primary">
+                </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extrajs %}
+    <script src="{% static 'js/sign.js' %}"></script>
+{% endblock extrajs %}
+
+

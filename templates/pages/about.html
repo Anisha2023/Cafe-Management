@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index-style.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <h1 class="ms-4 px-4">About Us</h1>
+    <div class="container">
+        <img src="{% static 'images/abt.jpg' %}" alt="" style="height: 880px; width: 100%;">
+    <div class="centered fw-bolder">SIT CAFE <br><p class="about">SiliconTech has four dining halls and one cafeteria within 
+        the campus. Each of them serves freshly prepared, delicious, nutritious food from a 
+        variety of cuisines. There are exclusive dining halls for vegetarians, non-vegetarians, and college staff.
+         A common dining hall serves food for guests as well as staff members. A dedicated Canteen Committee of student 
+        representatives, supervisors, and faculty manages the operations of the canteen.</p>
+    </div>
+    
+    </div>
+    
+{% endblock content %}
